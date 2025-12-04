@@ -149,6 +149,8 @@ This generates `causal_links.ttl` containing:
 ├── csv_to_rdf.py                   # CSV → RDF converter
 ├── minimal_checker.cpp             # Data loading verification utility
 ├── tests.cpp                       # Unit tests for core functionality
+├── graphviz_example.dot            # Dot format graph visualization of causal chain
+├── graphviz_example.png            # GraphViz visualization of causal chain sequence
 └── README.md                       # This documentation file
 ```
 
