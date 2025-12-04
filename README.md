@@ -1,6 +1,7 @@
 # Causal Constructicon and Annotation System
 
-A tool for extracting causal relationships from using linguistic patterns and semi-automated annotation. Text example: NTSB accident reports.
+A tool for extracting causal relationships from using linguistic patterns and semi-automated annotation. 
+Text example: NTSB accident reports.
 
 ## Prerequisites
 
