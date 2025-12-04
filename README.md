@@ -171,3 +171,7 @@ NTSB Reports → Pattern Matching → User Validation → CSV Output → RDF Kno
 Complete workflow from raw data through annotation to RDF knowledge graph generation:
 
 ![Causal Annotation System Diagram](https://raw.githubusercontent.com/falcontologist/cu-cspb2270-2025-final_project/main/system_diagram_dark.png)
+
+## Example Graph Visualization
+Here is an example of a causal chain extracted from the annotation process, converted into an RDF graph, and visualized in GraphViz.
+![Example Causation Graph Diagram](https://github.com/falcontologist/cu-cspb2270-2025-final_project/blob/main/graphviz_example.png)
