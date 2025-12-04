@@ -1,0 +1,12 @@
+construction_id,record_id,trigger,cause,effect,status
+C148,193383,"Contributing to","the lack of adequate strategies to monitor the development of the traffic queue on Interstate 70 after a minor incident and to inform travelers of the traffic conditions ahead","the crash",Verified
+M001,193383,"the probable cause of","the truck driver's inattention and failure to respond, for unknown reasons, to the visibly slow-moving vehicles, including a motorcoach, at the end of a traffic queue caused by an earlier minor crash","the Etna, Ohio, crash",Verified
+TK,193383,"for","unknown reasons","the truck driver's inattention and failure to respond",Verified
+TK,193383,"contributing to","the lack of an in-vehicle driver monitoring system to return the truck driver's attention to the forward roadway","the crash",Verified
+C039,193196,"prevented","The failure of the alternate gear extension system","the landing gear from being lowered",Verified
+C148,193196,"Contributing to","the loss of the left hydraulic system","the accident",Verified
+TK,193196,"due to","a ruptured left main gear door actuator hose","the loss of the left hydraulic system",Verified
+TK,193196,"due to","tensile overload","a broken wire",Verified
+TK,193196,"The cause of","a broken wire","the system failure",Verified
+TK,193196,"preventing","a broken wire, due to tensile overload, between the alternate gear extend switch and the alternate extension power pack (AEPP)","the AEPP from energizing and supplying hydraulic fluid to the door lock release actuators for the nose landing gear and main landing gear",Verified
+TK,193196,"from","fatigue","a ruptured left main gear door actuator hose",Verified
