@@ -2,6 +2,21 @@
 
 A tool for extracting causal relationships from using linguistic patterns and semi-automated annotation. Text example: NTSB accident reports.
 
+## Prerequisites
+
+C++ Dependencies:
+
+- C++17 Compiler: Use a compatible compiler (e.g., g++ 7+ or clang 5+).
+- JSON Header: Make sure that you have the json.hpp in the project directory.
+
+Python Dependencies:
+
+- Install the required Python packages for the CSV to RDF graph generator:
+
+```bash
+pip install pandas rdflib
+```
+
 ## Quick Start
 
 ```bash
