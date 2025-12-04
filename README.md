@@ -1,6 +1,6 @@
 # Causal Annotation System
 
-A tool for extracting causal relationships from NTSB accident reports using linguistic patterns and manual validation.
+A tool for extracting causal relationships from using linguistic patterns and semi-automated annotation. Text example: NTSB accident reports.
 
 ## Quick Start
 
