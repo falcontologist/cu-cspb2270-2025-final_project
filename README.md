@@ -59,17 +59,17 @@ g++ -std=c++17 -o annotator constructicon-simple.cpp minimal_checker.cpp
 └── README.md                       # This documentation file
 ```
 
+## Features
+- Three pattern identification modes: full auto, semi auto, manual
+- Progress tracking so that progress can continue over multiple sessions
+- Color-coded highlighting for validation
+- CSV export to prepare for graph generation
+- RDF knowledge graph generation
+
 ## Data Flow
 ```
 NTSB Reports → Pattern Matching → User Validation → CSV Output → RDF Knowledge Graph
 ```
-
-## Features
-- Dual annotation mode (automatic + manual)
-- Session persistence via progress tracking
-- Color-coded highlighting for validation
-- CSV export for downstream processing
-- RDF knowledge graph generation
 
 ## System Architecture
 Complete workflow from raw data through annotation to RDF knowledge graph generation:
