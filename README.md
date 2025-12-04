@@ -47,7 +47,7 @@ The system automatically initializes when you compile and run the program:
   }
 ]
 ```
-- `constructions.h` - 152 causal constructions (e.g., "C001: <cause> where <effect>"):
+- `constructions.h` - 152 causal constructions:
 ```cpp
 {
     "C010",
