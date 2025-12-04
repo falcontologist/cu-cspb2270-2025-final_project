@@ -43,19 +43,21 @@ g++ -std=c++17 -o annotator constructicon-simple.cpp minimal_checker.cpp
 - `causal_links.ttl` - RDF knowledge graph (generated via `csv_to_rdf.py`)
 
 ## Project Structure
-├── constructicon-simple.h/.cpp # Core library & annotation logic
-├── constructions.h # 152 causal construction definitions
-├── patterns.h # 96 regex patterns for matching
-├── json.hpp # JSON parsing library (nlohmann)
-├── cleaned_data.json # NTSB accident reports (input)
-├── annotations.csv # Verified causal relationships (output)
-├── progress.txt # Session progress tracking
-├── causal_links.ttl # RDF knowledge graph (example generated output)
-├── system_diagram_dark.png # System workflow diagram (dark theme)
-├── csv_to_rdf.py # CSV → RDF converter
-├── minimal_checker.cpp # Data loading verification utility
-├── tests.cpp # Unit tests for core functionality
-└── README.md # This documentation file
+```
+├── constructicon-simple.h/.cpp     # Core library & annotation logic
+├── constructions.h                 # 152 causal construction definitions
+├── patterns.h                      # 96 regex patterns for matching
+├── json.hpp                        # JSON parsing library (nlohmann)
+├── cleaned_data.json               # NTSB accident reports (input)
+├── annotations.csv                 # Verified causal relationships (output)
+├── progress.txt                    # Session progress tracking
+├── causal_links.ttl                # RDF knowledge graph (example generated output)
+├── system_diagram_dark.png         # System workflow diagram (dark theme)
+├── csv_to_rdf.py                   # CSV → RDF converter
+├── minimal_checker.cpp             # Data loading verification utility
+├── tests.cpp                       # Unit tests for core functionality
+└── README.md                       # This documentation file
+```
 
 ## Data Flow
 ```
