@@ -96,11 +96,13 @@ When a match is found, it is highlighted in yellow to show that it is a candidat
 
 Choose one of three parsing methods when annotating causal connectors:
 
-| Type | When to Use | Example |
-|------|-------------|---------|
-| **FullAuto** | The trigger always indicates causality | "because", "resulting in" |
-| **SemiAuto** | The trigger typically indicates causality | "arises from", "promotes" |
-| **Manual** | The trigger is noisy or polysemous | "for", "from", "when" |
+| Type      | What it does                                      | When to Use                             | Example                       |
+|-----------|----------------------------------------------------|-------------------------------------------|-------------------------------|
+| **FullAuto** | Automatically validates trigger as causal connector | Trigger always indicates causality     | "because", "resulting in"     |
+| **SemiAuto** | Automatically flags candidate, prompts validation | Trigger typically indicates causality | "arises from", "promotes"     |
+| **Manual**   | Never searches for trigger, requires manual entry | Trigger is noisy or polysemous        | "for", "from", "when"         |
+
+These parse methods can be set during the manual annotation phase only. In future versions, these settings will be incorporated into the pattern structs and applied during the pattern matching process.
 
 ## Output Files
 - `annotations.csv` - Verified causal relationships (construction_id, record_id, trigger, cause, effect)
@@ -150,10 +152,13 @@ This generates `causal_links.ttl` containing:
 └── README.md                       # This documentation file
 ```
 
-## Features
+## Features at a Glance
+- Surface pattern searching based on construction grammar
+- Expedites and enhances human annotation tasks
 - Three pattern identification modes: full auto, semi auto, manual
 - Progress tracking so that progress can continue over multiple sessions
 - Color-coded highlighting for validation
+- Annotations can be used as gold training data for machine learning
 - CSV export to prepare for graph generation
 - RDF knowledge graph generation
 
