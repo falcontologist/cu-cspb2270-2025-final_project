@@ -20,10 +20,10 @@ pip install pandas rdflib
 ## Quick Start
 
 ```bash
-# Compile
-g++ -std=c++17 -o annotator constructicon-simple.cpp minimal_checker.cpp
+# compile the constructicon and annotator
+g++ -std=c++17 -o annotator constructicon-simple.cpp
 
-# Run annotation tool
+# run the annotator
 ./annotator
 ```
 
@@ -41,6 +41,29 @@ g++ -std=c++17 -o annotator constructicon-simple.cpp minimal_checker.cpp
 ## Output Files
 - `annotations.csv` - Verified causal relationships (construction_id, record_id, trigger, cause, effect)
 - `causal_links.ttl` - RDF knowledge graph (generated via `csv_to_rdf.py`)
+
+## Checking Data Loading and Progress
+The `minimal_checker` utility shows what data has been loaded and the number of records processed so far:
+```bash
+# compile the checker
+g++ -std=c++17 -o minimal_checker minimal_checker.cpp constructicon-simple.cpp
+
+# run the checker
+./minimal_checker
+```
+
+## Generating RDF Graphs from CSV
+After annotating records, convert your `annotations.csv` to an RDF knowledge graph:
+```bash
+# run the converter
+python csv_to_rdf.py
+```
+This generates `causal_links.ttl` containing:
+
+- Reified causation statements (cause → effect relationships)
+- Causal connectors used
+- Construction IDs and record IDs for traceability
+- Turtle format RDF
 
 ## Project Structure
 ```
