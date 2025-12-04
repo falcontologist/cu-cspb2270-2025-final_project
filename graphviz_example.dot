@@ -1,0 +1,83 @@
+digraph Causation {
+    // Graph Attributes for Redux Dark with White Elements
+    rankdir=TB;
+    bgcolor="#191A21"; // Very dark, desaturated midnight blue/purple
+    fontcolor=white;
+
+    // Node Defaults
+    node [
+        style="rounded,filled",
+        bgcolor="232030",
+        fillcolor="#000000", // Black nodes
+        fontcolor=white,
+        color=white // White borders
+    ];
+
+    // Literal Nodes (Bottom Rank)
+    fatigue [shape=box, label="fatigue"];
+    rupturedHose [shape=box, label="a ruptured left main gear door actuator hose"];
+    lossHydraulic [shape=box, label="the loss of the left hydraulic system"];
+    accident [shape=box, label="the accident"];
+    
+    // Blank nodes (instances) - Middle Rank
+    _b1 [shape=circle, fillcolor="#3A3A45", label=""];
+    _b2 [shape=circle, fillcolor="#3A3A45", label=""];
+    _b3 [shape=circle, fillcolor="#3A3A45", label=""];
+
+    // New Connector Nodes (Using a slight color shift to distinguish, as before)
+    connector_1 [shape=box, label="from", color=white]; 
+    connector_2 [shape=box, label="due to", color=white];
+    connector_3 [shape=box, label="Contributing to", color=white];
+
+    // Single visible class - Top Rank
+    CausationClass [shape=ellipse, label="Causation"];
+
+    // Edge Defaults
+    edge [
+        fontcolor=white,
+        color=white
+    ];
+    
+    // --- Rank Assignments for 3-Row Structure ---
+    // 1. Top Row
+    { rank=min; CausationClass; }
+
+// 2. Middle Row: Blank Nodes and Connector Labels
+    // Single invisible chain defines the desired left-to-right order: C1 -> B1 -> C2 -> B2 -> C3 -> B3
+    { rank=same; 
+        _b1 -> connector_1 -> _b2 -> connector_2 -> _b3 -> connector_3 [style=invis] ;
+    }
+    
+    // 3. Bottom Row: Causes and Effects
+    { rank=max; fatigue; rupturedHose; lossHydraulic; accident; }
+    // Enforce horizontal order for bottom row
+    fatigue -> rupturedHose -> lossHydraulic -> accident [style=invis];
+
+
+    // --- Reification Edges (Blank Node -> Cause/Effect) ---
+    _b1 -> fatigue       [label=":cause"];
+    _b1 -> rupturedHose  [label=":effect"];
+
+    _b2 -> rupturedHose  [label=":cause"];
+    _b2 -> lossHydraulic [label=":effect"];
+
+    _b3 -> lossHydraulic [label=":cause"];
+    _b3 -> accident      [label=":effect"];
+
+    // --- Connector Edges (Blank Node -> Connector Node) ---
+    // The edge connects the blank node to the connector label
+    // Note: The visual placement is handled by the invisible edges above
+    _b1 -> connector_1 [label=":connector"];
+    _b2 -> connector_2 [label=":connector"];
+    _b3 -> connector_3 [label=":connector"];
+    
+    // Type Assertions - Solid White lines (instance -> class)
+    _b1 -> CausationClass [label="rdf:type", style=solid, dir=forward];
+    _b2 -> CausationClass [label="rdf:type", style=solid, dir=forward];
+    _b3 -> CausationClass [label="rdf:type", style=solid, dir=forward];
+    
+    // Derived Causal Chain - Dashed White lines
+    fatigue -> rupturedHose     [label=":facilitates", style=dashed];
+    rupturedHose -> lossHydraulic   [label=":facilitates", style=dashed];
+    lossHydraulic -> accident       [label=":facilitates", style=dashed];
+}
