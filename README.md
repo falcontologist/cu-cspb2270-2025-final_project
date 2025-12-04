@@ -12,12 +12,6 @@ g++ -std=c++17 -o annotator constructicon-simple.cpp minimal_checker.cpp
 ./annotator
 ```
 
-## System Architecture
-
-![Causal Annotation System Diagram](https://raw.githubusercontent.com/falcontologist/cu-cspb2270-2025-final_project/main/system_diagram_dark.png)
-
-Complete workflow from raw data through annotation to RDF knowledge graph generation.
-
 ## Input Files
 - `cleaned_data.json` - NTSB accident reports (required)
 - `constructions.h` - 152 causal constructions (e.g., "C001: <cause> where <effect>")
@@ -54,3 +48,8 @@ NTSB Reports → Pattern Matching → User Validation → CSV Output → RDF Kno
 - Color-coded highlighting for validation
 - CSV export for downstream processing
 - RDF knowledge graph generation
+
+## System Architecture
+Complete workflow from raw data through annotation to RDF knowledge graph generation:
+
+![Causal Annotation System Diagram](https://raw.githubusercontent.com/falcontologist/cu-cspb2270-2025-final_project/main/system_diagram_dark.png)
