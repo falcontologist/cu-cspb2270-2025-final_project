@@ -90,7 +90,7 @@ Choose one of three parsing methods when annotating causal connectors:
 |------|-------------|---------|
 | **FullAuto** | The trigger always indicates causality | "because", "resulting in" |
 | **SemiAuto** | The trigger typically indicates causality | "arises from", "promotes" |
-| **Manual** | The trigger is noisy/ambiguous | "for", "from", "when" |
+| **Manual** | The trigger is noisy or polysemous | "for", "from", "when" |
 
 ## Output Files
 - `annotations.csv` - Verified causal relationships (construction_id, record_id, trigger, cause, effect)
