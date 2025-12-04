@@ -27,20 +27,42 @@ g++ -std=c++17 -o annotator constructicon-simple.cpp
 ./annotator
 ```
 
+## Initialization
+
+The system automatically initializes when you compile and run the program:
+
+1. **Constructicon Initialization**: Loads all causal constructions and regex patterns from `constructions.h` and `patterns.h`
+2. **Annotator Initialization**: Loads accident records from `cleaned_data.json`
+3. **Static Initializers**: The `ConstructiconInitializer` and `AnnotatorInitializer` objects run automatically at program start
+
 ## Input Files
-- `cleaned_data.json` - NTSB accident reports (required)
-- `constructions.h` - 152 causal constructions (e.g., "C001: <cause> where <effect>")
-- `patterns.h` - 96 regex patterns for matching
-
-## Annotation Process
-1. **Automatic matching** - System finds potential causal connectors using regex patterns
-2. **User validation** - Review each match, label cause/effect spans
-3. **Manual entry** - Add connectors missed by automatic matching
-4. **Progress tracking** - Resume where you left off using `progress.txt`
-
-## Output Files
-- `annotations.csv` - Verified causal relationships (construction_id, record_id, trigger, cause, effect)
-- `causal_links.ttl` - RDF knowledge graph (generated via `csv_to_rdf.py`)
+- `cleaned_data.json` - sample text from [NTSB accident reports](https://carol.ntsb.gov):
+```json
+[
+  {
+    "cm_mkey": 12345,
+    "cm_probableCause": "The pilot failed to maintain altitude..."
+  }
+]
+```
+- `constructions.h` - 152 causal constructions (e.g., "C001: <cause> where <effect>"):
+```cpp
+{
+    "C010",
+    CausalDegree::Facilitate,
+    CausalOrder::EC,
+    "<effect>, as <cause>",
+    "As science has yet to prove or disprove the existence of a divine power, and probably never will, I will use my gift of reason.  As the power increased, the rotor spun faster."
+},
+```
+- `patterns.h` - 96 regex patterns for matching:
+```cpp
+{
+    "<cause> gives rise to <effect>",
+    std::regex(R"(\b(give|gives|gave|given|giving)\s+rise\s+to\b)", std::regex::icase),
+    {"C017"}
+},
+```
 
 ## Checking Data Loading and Progress
 The `minimal_checker` utility shows what data has been loaded and the number of records processed so far:
@@ -50,6 +72,40 @@ g++ -std=c++17 -o minimal_checker minimal_checker.cpp constructicon-simple.cpp
 
 # run the checker
 ./minimal_checker
+```
+
+## Annotation Process
+1. **Pattern matching** - System finds potential causal connectors using regex patterns
+2. **User validation** - Review each match, label cause/effect spans
+3. **Manual entry** - Add connectors missed by automatic matching
+4. **Progress tracking** - Resume where you left off using `progress.txt`
+
+## Parsing Automation Methods
+
+Choose one of three parsing methods when annotating causal connectors:
+
+| Type | When to Use | Example |
+|------|-------------|---------|
+| **FullAuto** | The trigger always indicates causality | "because", "resulting in" |
+| **SemiAuto** | The trigger typically indicates causality | "arises from", "promotes" |
+| **Manual** | The trigger is noisy/ambiguous | "for", "from", "when" |
+
+## Output Files
+- `annotations.csv` - Verified causal relationships (construction_id, record_id, trigger, cause, effect)
+```csv
+construction_id,record_id,trigger,cause,effect,status
+C148,193383,"contributed to","pilot error","accident",Verified
+TK,193384,"led to","mechanical failure","crash",Verified
+```
+
+- `causal_links.ttl` - RDF knowledge graph in Turtle format (generated via `csv_to_rdf.py`)
+```turtle
+[] a ex:Causation ;
+    ex:cause "The failure of the alternate gear extension system" ;
+    ex:connector "prevented" ;
+    ex:effect "the landing gear from being lowered" ;
+    ex:constructionID "C039" ;
+    ex:recordID "193196" .
 ```
 
 ## Generating RDF Graphs from CSV
