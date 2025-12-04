@@ -57,7 +57,7 @@ The system automatically initializes when you compile and run the program:
     "As science has yet to prove or disprove the existence of a divine power, and probably never will, I will use my gift of reason.  As the power increased, the rotor spun faster."
 },
 ```
-- `patterns.h` - 96 regex patterns for matching:
+- `patterns.h` - 96 regex patterns for matching (omitting noisy triggers):
 ```cpp
 {
     "<cause> gives rise to <effect>",
