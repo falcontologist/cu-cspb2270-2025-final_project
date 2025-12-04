@@ -82,6 +82,16 @@ g++ -std=c++17 -o minimal_checker minimal_checker.cpp constructicon-simple.cpp
 3. **Manual entry** - Add connectors missed by automatic matching
 4. **Progress tracking** - Resume where you left off using `progress.txt`
 
+## Terminal Colors
+
+During annotation in the terminal, triggers are highlighted with ANSI escape colors:
+
+- 🔴 Red (Rejected): User-rejected match
+- 🟡 Yellow (Candidate): Potential match found by pattern search
+- 🟢 Green (Verified): Confirmed causal connector
+
+When a match is found, it is highlighted in yellow to show that it is a candidate. If the user confirms that it is valid, it changes to green. If the user rejects it, it turns to red. These colors help visually track progress while working in one record.
+
 ## Parsing Automation Methods
 
 Choose one of three parsing methods when annotating causal connectors:
