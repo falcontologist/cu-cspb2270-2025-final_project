@@ -71,7 +71,8 @@ The system automatically initializes when you compile and run the program:
 {
     "<cause> gives rise to <effect>",
     std::regex(R"(\b(give|gives|gave|given|giving)\s+rise\s+to\b)", std::regex::icase),
-    {"C017"}
+    {"C017"},
+    ParseMethod::SemiAuto
 },
 ```
 
