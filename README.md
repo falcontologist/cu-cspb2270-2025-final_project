@@ -4,6 +4,7 @@ A tool for extracting causal relationships from text using linguistic patterns a
 
 Text example: NTSB accident reports.
 
+
 ## Prerequisites
 
 C++ Dependencies:
@@ -19,6 +20,7 @@ Python Dependencies:
 pip install pandas rdflib
 ```
 
+
 ## Quick Start
 
 ```bash
@@ -29,6 +31,7 @@ g++ -std=c++17 -o annotator constructicon-simple.cpp
 ./annotator
 ```
 
+
 ## Initialization
 
 The system automatically initializes when you compile and run the program:
@@ -36,6 +39,7 @@ The system automatically initializes when you compile and run the program:
 1. **Constructicon Initialization**: Loads all causal constructions and regex patterns from `constructions.h` and `patterns.h`
 2. **Annotator Initialization**: Loads accident records from `cleaned_data.json`
 3. **Static Initializers**: The `ConstructiconInitializer` and `AnnotatorInitializer` objects run automatically at program start
+
 
 ## Input Files
 - `cleaned_data.json` - sample text from [NTSB accident reports](https://carol.ntsb.gov):
@@ -66,6 +70,7 @@ The system automatically initializes when you compile and run the program:
 },
 ```
 
+
 ## Checking Data Loading and Progress
 The `minimal_checker` utility shows what data has been loaded and the number of records processed so far:
 ```bash
@@ -75,6 +80,7 @@ g++ -std=c++17 -o minimal_checker minimal_checker.cpp constructicon-simple.cpp
 # run the checker
 ./minimal_checker
 ```
+
 
 ## Data Structures
 
@@ -137,6 +143,7 @@ std::vector<AnnotationEntry> annotations
 3. **Manual entry** - Add connectors missed by automatic matching
 4. **Progress tracking** - Resume where you left off using `progress.txt`
 
+
 ## Terminal Colors
 
 During annotation in the terminal, triggers are highlighted with ANSI escape colors:
@@ -146,6 +153,7 @@ During annotation in the terminal, triggers are highlighted with ANSI escape col
 - 🟢 Green (Verified): Confirmed causal connector
 
 When a match is found, it is highlighted in yellow to show that it is a candidate. If the user confirms that it is valid, it changes to green. If the user rejects it, it turns to red. These colors help visually track progress while working in one record.
+
 
 ## Parsing Automation Methods
 
@@ -158,6 +166,7 @@ Choose one of three parsing methods when annotating causal connectors:
 | **Manual**   | Never searches for trigger, requires manual entry | Trigger is noisy or polysemous        | "for", "from", "when"         |
 
 These parse methods can be set during the manual annotation phase only. In future versions, these settings will be incorporated into the pattern structs and applied during the pattern matching process.
+
 
 ## Output Files
 - `annotations.csv` - Verified causal relationships (construction_id, record_id, trigger, cause, effect)
@@ -177,6 +186,7 @@ TK,193384,"led to","mechanical failure","crash",Verified
     ex:recordID "193196" .
 ```
 
+
 ## Generating RDF Graphs from CSV
 After annotating records, convert your `annotations.csv` to an RDF knowledge graph:
 ```bash
@@ -189,6 +199,7 @@ This generates `causal_links.ttl` containing:
 - Causal connectors used
 - Construction IDs and record IDs for traceability
 - Turtle format RDF
+
 
 ## Project Structure
 ```
@@ -209,6 +220,7 @@ This generates `causal_links.ttl` containing:
 └── README.md                       # This documentation file
 ```
 
+
 ## Features at a Glance
 - Surface pattern searching based on construction grammar
 - Expedites and enhances human annotation tasks
@@ -218,6 +230,7 @@ This generates `causal_links.ttl` containing:
 - Annotations can be used as gold training data for machine learning
 - CSV export to prepare for graph generation
 - RDF knowledge graph generation
+
 
 ## Data Flow
 ```
@@ -283,4 +296,4 @@ Talmy, L. (2000). *Toward a cognitive semantics, Volume 1: Concept structuring s
 ## Acknowledgments
 
 This project incorporates data derived from publicly available National Transportation Safety Board (NTSB) accident reports.  
-It also builds on the comprehensive research program on causal constructions developed by Jesse Dunietz. Many of the reference constructions used in `constructions.h` were repurposed from Appendix C of his 2018 dissertation. His associated repositories served primarily as methodological inspirations and are released under the MIT License.
+It also builds on the comprehensive research program on causal constructions developed by Jesse Dunietz. Many of the reference constructions in `constructions.h` are adapted from Appendix C of his 2018 dissertation. His linked repositories, released under the MIT License, informed the methodology used here.
