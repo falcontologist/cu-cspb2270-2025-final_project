@@ -76,6 +76,61 @@ g++ -std=c++17 -o minimal_checker minimal_checker.cpp constructicon-simple.cpp
 ./minimal_checker
 ```
 
+## Data Structures
+
+1. CausalConstruction
+```cpp
+struct CausalConstruction {
+    std::string id;                // unique ID for a construction, e.g. "C001", "C146"
+    CausalDegree degree;           // Facilitate or Inhibit, depending on polarity
+    CausalOrder order;             // CE (cause -> effect) or EC (effect -> cause)
+    std::string trigger_template;  // trigger in context of the construction
+    std::string example;           // example of the construction in context
+};
+```
+
+2. CausalPattern
+```cpp
+struct CausalPattern {
+    std::string description;       // human-readable discription of the construction in context
+    std::regex pattern;            // regular expression, e.g. std::regex(R"(\bis\s+why\b)", std::regex::icase)
+    std::vector<std::string> ids;  // one or multiple Construction IDs, e.g. {"C146"}
+    ParseMethod parse_method;      // parse method used for pattern matching: FullAuto, SemiAuto, or Manual
+};
+```
+3. Record
+```cpp
+struct Record {
+    int recordID;                  // NTSB accident record ID, e.g. 193383
+    std::string probableCause;     // NTSB probable cause statement following an investigation.
+};
+```
+4. AnnotationEntry
+```cpp
+struct AnnotationEntry {
+    std::string constructionID;    // Construction ID, e.g. "C146"
+    int recordID;                  // Record ID, e.g. 193383
+    std::string trigger;           // word, phrase, or pattern that triggers a construction, e.g. "due to"
+    std::string cause;             // span of text that encompasses the cause associated with the connector
+    std::string effect;            // span of text that encompasses the effect associated with the connector
+    AnnotationStatus status;       // verification status: Verified, Candidate, Rejected, or Unknown
+    ParseMethod parse_method;      // annotator sets the parse method: ullAuto, SemiAuto, or Manual
+};
+```   
+
+These structures are all contained in vectors:
+
+```cpp
+std::initializer_list<CausalConstruction> constructions
+
+std::initializer_list<CausalPattern> patterns
+
+std::vector<Record> records
+
+std::vector<AnnotationEntry> annotations
+```
+
+
 ## Annotation Process
 1. **Pattern matching** - System finds potential causal connectors using regex patterns
 2. **User validation** - Review each match, label cause/effect spans
