@@ -50,34 +50,9 @@ The system automatically initializes when you compile and run the program:
 
 
 ## Input Files
-- `cleaned_data.json` - sample text from [NTSB accident reports](https://carol.ntsb.gov):
-```json
-[
-  {
-    "cm_mkey": 12345,
-    "cm_probableCause": "The pilot failed to maintain altitude..."
-  }
-]
-```
-- `constructions.h` - 152 causal constructions:
-```cpp
-{
-    "C010",
-    CausalDegree::Facilitate,
-    CausalOrder::EC,
-    "<effect>, as <cause>",
-    "As science has yet to prove or disprove the existence of a divine power, and probably never will, I will use my gift of reason.  As the power increased, the rotor spun faster."
-},
-```
-- `patterns.h` - 96 regex patterns for matching (omitting noisy triggers):
-```cpp
-{
-    "<cause> gives rise to <effect>",
-    std::regex(R"(\b(give|gives|gave|given|giving)\s+rise\s+to\b)", std::regex::icase),
-    {"C017"},
-    ParseMethod::SemiAuto
-},
-```
+- `cleaned_data.json` - sample text from [NTSB accident reports](https://carol.ntsb.gov)
+- `constructions.h` - 152 causal constructions
+- `patterns.h` - 96 regex patterns for matching (omitting noisy triggers)
 
 
 ## Checking Data Loading and Progress
@@ -303,5 +278,6 @@ Talmy, L. (2000). *Toward a cognitive semantics, Volume 1: Concept structuring s
 
 ## Acknowledgments
 
-This project incorporates data derived from publicly available National Transportation Safety Board (NTSB) accident reports.  
+This project incorporates data derived from publicly available National Transportation Safety Board (NTSB) accident reports.
+
 It also builds on the comprehensive research program on causal constructions developed by Jesse Dunietz. Many of the reference constructions in `constructions.h` are adapted from Appendix C of his 2018 dissertation. His linked repositories, released under the MIT License, informed the methodology used here.
