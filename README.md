@@ -114,7 +114,7 @@ struct AnnotationEntry {
     std::string cause;             // span of text that encompasses the cause associated with the connector
     std::string effect;            // span of text that encompasses the effect associated with the connector
     AnnotationStatus status;       // verification status: Verified, Candidate, Rejected, or Unknown
-    ParseMethod parse_method;      // annotator sets the parse method: ullAuto, SemiAuto, or Manual
+    ParseMethod parse_method;      // annotator sets the parse method: FullAuto, SemiAuto, or Manual
 };
 ```   
 
