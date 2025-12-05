@@ -110,7 +110,7 @@ struct Record {
 struct AnnotationEntry {
     std::string constructionID;    // Construction ID, e.g. "C146"
     int recordID;                  // Record ID, e.g. 193383
-    std::string trigger;           // word, phrase, or pattern that triggers a construction, e.g. "due to"
+    std::string trigger;           // word, phrase, or pattern that evokes a construction, e.g. "due to"
     std::string cause;             // span of text that encompasses the cause associated with the connector
     std::string effect;            // span of text that encompasses the effect associated with the connector
     AnnotationStatus status;       // verification status: Verified, Candidate, Rejected, or Unknown
