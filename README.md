@@ -202,12 +202,11 @@ After annotating records, convert your `annotations.csv` to an RDF knowledge gra
 # run the converter
 python csv_to_rdf.py
 ```
-This generates `causal_links.ttl` containing:
+This generates a Turtle file `causal_links.ttl` containing:
 
 - Reified causation statements (cause → effect relationships)
 - Causal connectors used
 - Construction IDs and record IDs for traceability
-- Turtle format RDF
 
 
 ## Project Structure
