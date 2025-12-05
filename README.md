@@ -233,3 +233,54 @@ Complete workflow from raw data through annotation to RDF knowledge graph genera
 Here is an example of a causal chain extracted from the annotation process, converted into an RDF graph, and visualized in GraphViz.
 
 ![Example Causation Graph Diagram](https://github.com/falcontologist/cu-cspb2270-2025-final_project/blob/main/graphviz_example.png)
+
+
+## References
+
+Allen, J. F. (1983). *Maintaining knowledge about temporal intervals*. **Communications of the ACM, 26**(11), 832–843.
+
+Cowan, R. (2008). *The teacher’s grammar of English*. Cambridge University Press.
+
+Croft, W., Kalm, P., & Regan, M. (2022). *Decomposing events and storylines*. In **Decompositional event structures in language, cognition, and computation** (pp. 67–86). Cambridge University Press.
+
+Croft, W., Pešková, P., & Regan, M. (2017). *Integrating decompositional event structure into storylines*. In T. Caselli, B. Miller, M. van Erp, & others (Eds.), **Proceedings of the Workshop on Events and Stories in the News** (pp. 98–109). Association for Computational Linguistics.
+
+Dixon, R. (Ed.). (2006). *Complementation: A cross-linguistic typology*. Oxford University Press.
+
+Dixon, R., & Aikhenvald, A. (Eds.). (2009). *The semantics of clause linking: A cross-linguistic typology*. Oxford University Press.
+
+Dunietz, J. (2018). *Annotating and automatically tagging constructions of causal language* (Doctoral dissertation). Carnegie Mellon University, Pittsburgh, PA.
+
+Dunietz, J. (n.d.). *GitHub profile*. Retrieved from https://github.com/duncanka
+
+Dunietz, J. (n.d.). *BECAUSE: The BECauSE Corpus and tools*. GitHub repository. Retrieved from https://github.com/duncanka/BECAUSE
+
+Dunietz, J. (n.d.). *Causeway: A causality annotation and analysis toolkit*. GitHub repository. Retrieved from https://github.com/duncanka/Causeway
+
+Dunietz, J. (n.d.). *LSTM Causality Tagger*. GitHub repository. Retrieved from https://github.com/duncanka/lstm-causality-tagger
+
+Dunietz, J., Levin, L., & Carbonell, J. (2017). *The BECauSE Corpus 2.0: Annotating causality and overlapping relations*. In **LAW XI – The 11th Linguistic Annotation Workshop**.
+
+Dunietz, J., Levin, L., & Carbonell, J. (2018). *DeepCx: A transition-based approach for shallow semantic parsing with complex constructional triggers*. In **Proceedings of EMNLP 2018**.
+
+Goldberg, A. E. (1995). *Constructions: A construction grammar approach to argument structure*. University of Chicago Press.
+
+Gordon, A., & Hobbs, J. (2017). *A formal theory of commonsense psychology: How people think people think*. Cambridge University Press.
+
+Matthiessen, C., & Thompson, S. (1988). *The structure of discourse and “subordination.”* In M. Haiman & S. Thompson (Eds.), **Clause combining in grammar and discourse** (pp. 275–329). John Benjamins Publishing.
+
+National Transportation Safety Board. (n.d.). *NTSB accident reports*. Retrieved from https://carol.ntsb.gov
+
+Rezvani Kalajahi, S., Abdullah, A., Mukundan, J., & Tannacito, D. (2012). *Discourse connectors: An overview of the history, definition and classification of the term*. **World Applied Sciences Journal, 19**(11), 1659–1673.
+
+Rezvani Kalajahi, S., Neufeld, S., & Abdullah, A. (2017). *The discourse connector list: A multi-genre cross-cultural corpus analysis*. **Text & Talk, 37**(3), 283–310.
+
+Talmy, L. (1988). *Force dynamics in language and cognition*. **Cognitive Science, 12**(1), 49–100.
+
+Talmy, L. (2000). *Toward a cognitive semantics, Volume 1: Concept structuring systems*. MIT Press.
+
+
+## Acknowledgments
+
+This project incorporates data derived from publicly available National Transportation Safety Board (NTSB) accident reports.  
+It also builds on the comprehensive research program on causal constructions developed by Jesse Dunietz. Many of the reference constructions used in `constructions.h` were repurposed from Appendix C of his 2018 dissertation. His associated repositories served primarily as methodological inspirations and are released under the MIT License.
