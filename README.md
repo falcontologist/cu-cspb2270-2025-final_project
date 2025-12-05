@@ -1,6 +1,6 @@
 # Causal Constructicon and Annotation System
 
-A tool for extracting causal relationships from text using linguistic patterns and semi-automated annotation. 
+A semi-automated annotation system for high-precision extraction and graph generation of causal relationships using Construction Grammar patterns.
 
 
 ## What is the Causal Constructicon?
