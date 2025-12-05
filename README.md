@@ -184,12 +184,12 @@ TK,193384,"led to","mechanical failure","crash",Verified
 
 - `causal_links.ttl` - RDF knowledge graph in Turtle format (generated via `csv_to_rdf.py`)
 ```turtle
-[] a ex:Causation ;
-    ex:cause "The failure of the alternate gear extension system" ;
-    ex:connector "prevented" ;
-    ex:effect "the landing gear from being lowered" ;
-    ex:constructionID "C039" ;
-    ex:recordID "193196" .
+[] a :Causation ;
+    :cause "The failure of the alternate gear extension system" ;
+    :connector "prevented" ;
+    :effect "the landing gear from being lowered" ;
+    :constructionID "C039" ;
+    :recordID "193196" .
 ```
 
 
