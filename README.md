@@ -1,11 +1,11 @@
 # Causal Constructicon and Annotation System
 
-A semi-automated annotation system for high-precision extraction and graph generation of causal relationships using Construction Grammar patterns.
+A semi-automated annotation system for high-precision extraction and graph generation of causal relationships using form-meaning pairings.
 
 
 ## What is the Causal Constructicon?
 
-Based on the theory of Construction Grammar, a **Constructicon** is a comprehensive lexicon of constructions that a speaker learns, remembers, and uses to generate and understand language. Every construction in this inventory is a conventionally learned pairing of a linguistic **form** and an associated **meaning**. In this case, we are focusing on the set of constructions that relate **causes** and **effects** in natural language. 
+Based on the theory of Construction Grammar, a **Constructicon** is a comprehensive lexicon of constructions that a speaker learns, remembers, and uses to generate and understand language. Every construction in this inventory is a conventionally learned pairing of a surface **form** and an associated **meaning**. In this case, we are focusing on the set of constructions that relate **causes** and **effects** in natural language. 
 
 
 ## What is the Annotation System?
