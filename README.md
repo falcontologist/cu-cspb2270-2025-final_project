@@ -7,7 +7,7 @@ A tool for extracting causal relationships from text using linguistic patterns a
 
 Based on the theory of Construction Grammar, a **Constructicon** is a comprehensive lexicon of constructions that a speaker learns, remembers, and uses to generate and understand language. Every construction in this inventory is a conventionally learned pairing of a linguistic **form** and an associated **meaning**. In this case, we are focusing on the set of constructions that relate **causes** and **effects** in natural language. 
 
-The primary goal of this project is to develop a high-precision, deterministic, annotation system to identify and extract these causal constructions from text with a human in the loop. A manual annotation option enables users to pinpoint causal links that might have been missed and add new constructions to the inventory. The resulting annotations can then be transformed into a graph, or used as training data for machine learning pipelines. As a case study, we are using accident reports from the National Transportation Safety Bureau, as they are rich with causal links.
+The primary goal of this project is to develop a high-precision, deterministic, annotation system to identify and extract these causal constructions from text with a human in the loop. A manual annotation option allows users to pinpoint causal links that might have been missed and add new constructions to the inventory. The resulting annotations can then be transformed into a graph, or used as training data for machine learning pipelines. As a case study, we are using accident reports from the National Transportation Safety Bureau, as they are rich with causal links.
 
 
 ## Prerequisites
