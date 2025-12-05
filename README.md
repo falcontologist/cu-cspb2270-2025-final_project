@@ -5,7 +5,7 @@ A tool for extracting causal relationships from text using linguistic patterns a
 
 ## What is a Constructicon?
 
-Based on the theory of Construction Grammar, a **Constructicon** is a comprehensive lexicon of constructions that a speaker has learned, stored, and uses to generate and understand language. A word or phrase can evoke a common construction that structures its meaning. In this case, we are focusing on the set of constructions that relate causes and effects in natural language. The goal is to enable a high-precision, deterministic, human-in-the-loop annotation system to identify and extract these causal constructions from text. As a case study, we are using accident reports from the National Transportation Safety Bureau, as they are rich with causal links.
+Based on the theory of Construction Grammar, a **Constructicon** is a comprehensive lexicon of constructions that a speaker learns, remembers, and uses to generate and understand language. A word or phrase can evoke a common construction that structures its meaning. In this case, we are focusing on the set of constructions that relate causes and effects in natural language. The goal is to enable a high-precision, deterministic, human-in-the-loop annotation system to identify and extract these causal constructions from text. As a case study, we are using accident reports from the National Transportation Safety Bureau, as they are rich with causal links.
 
 
 ## Prerequisites
