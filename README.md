@@ -228,7 +228,7 @@ This generates `causal_links.ttl` containing:
 
 
 ## Features at a Glance
-- Surface pattern searching based on construction grammar
+- Shallow semantic parsing based on construction grammar
 - Expedites and enhances human annotation tasks
 - Three pattern identification modes: full auto, semi auto, manual
 - Progress tracking so that progress can continue over multiple sessions
