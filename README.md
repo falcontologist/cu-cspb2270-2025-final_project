@@ -98,7 +98,7 @@ struct CausalConstruction {
 2. CausalPattern
 ```cpp
 struct CausalPattern {
-    std::string description;       // human-readable discription of the construction in context
+    std::string description;       // human-readable description of the construction in context
     std::regex pattern;            // regular expression, e.g. std::regex(R"(\bis\s+why\b)", std::regex::icase)
     std::vector<std::string> ids;  // one or multiple Construction IDs, e.g. {"C146"}
     ParseMethod parse_method;      // parse method used for pattern matching: FullAuto, SemiAuto, or Manual
