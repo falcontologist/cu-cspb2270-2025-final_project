@@ -1,3 +1,5 @@
+// This code for testing functions is AI-generated
+
 #include "constructicon-simple.h"
 #include <iostream>
 #include <cstdlib>
