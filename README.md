@@ -263,6 +263,8 @@ Goldberg, A. E. (1995). *Constructions: A construction grammar approach to argum
 
 Gordon, A., & Hobbs, J. (2017). *A formal theory of commonsense psychology: How people think people think*. Cambridge University Press.
 
+Hobbs, J. (2005). *Toward a Useful Concept of Causality for Lexical Semantics*. **Journal of Semantics, 22**, 181–209. Oxford University Press.
+
 Matthiessen, C., & Thompson, S. (1988). *The structure of discourse and “subordination.”* In M. Haiman & S. Thompson (Eds.), **Clause combining in grammar and discourse** (pp. 275–329). John Benjamins Publishing.
 
 National Transportation Safety Board. (n.d.). *NTSB accident reports*. Retrieved from https://carol.ntsb.gov
